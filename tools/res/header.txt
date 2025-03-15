@@ -1,0 +1,6 @@
+/** -- Created on DATE --
+ * Copyright YEAR Mike Liddle
+ * Updated by AUTHOR on DATE
+ * License: MIT
+ * File: FILENAME
+**/
