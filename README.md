@@ -14,8 +14,8 @@ To start, you'll want to navigate to the first chapter folder `Chapter1` and ope
 
 ## Table of Contents
 
-- [Chapter 0: Getting Started with STM32H7](chapter0)
-- [Chapter 1: The Event Loop](chapter1)
+- [Chapter 0: Getting Started with STM32H7](Chapter0)
+- [Chapter 1: The Event Loop](Chapter1)
 
 ## Resources
 
