@@ -1,0 +1,21 @@
+{
+    "json.schemas": [{
+        "fileMatch": [
+            "settings.json",
+            "c_cpp_properties.json",
+            "tasks.json",
+            "launch.json",
+        ],
+        "schema": {
+            "allowTrailingCommas": true,
+        }
+    }],
+    "STM32VSCodeExtension.projectCreator.executablePath": "C:/Program Files/STMicroelectronics/STM32Cube/STM32CubeMX",
+    "STM32VSCodeExtension.cubeCLT.path": "C:/ST/STM32CubeCLT_1.18.0",
+    "STM32VSCodeExtension.productFinder.executablePath": "C:/Program Files/STMicroelectronics/STMCUFinder",
+    "cmake.cmakePath": "C:/ST/STM32CubeCLT_1.18.0/CMake/bin/cmake.exe",
+    "cmake.configureOnOpen": true,
+    "files.associations": {
+        "cstdint": "cpp"
+    },
+}

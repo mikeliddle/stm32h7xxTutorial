@@ -12,6 +12,7 @@ Function Invoke-NextLesson {
         $nextChapterDir = Join-Path $currentDir.Path "..\Chapter$nextChapter"
         if (Test-Path $nextChapterDir) {
             Set-Location $nextChapterDir
+            code .
         } else {
             Write-Host "Next chapter directory does not exist: Chapter$nextChapter" -ForegroundColor Yellow
         }
@@ -22,47 +23,43 @@ Function Invoke-NextLesson {
 
 Function Invoke-Chapter1 {
     Set-Location $env:WorkspaceRoot\Chapter1
+    code .
 }
 Function Invoke-Chapter2 {
     Set-Location $env:WorkspaceRoot\Chapter2
+    code .
 }
 Function Invoke-Chapter3 {
     Set-Location $env:WorkspaceRoot\Chapter3
+    code .
 }
 Function Invoke-Chapter4 {
     Set-Location $env:WorkspaceRoot\Chapter4
+    code .
 }
 Function Invoke-Chapter5 {
     Set-Location $env:WorkspaceRoot\Chapter5
+    code .
 }
 Function Invoke-Chapter6 {
     Set-Location $env:WorkspaceRoot\Chapter6
+    code .
 }
 Function Invoke-Chapter7 {
     Set-Location $env:WorkspaceRoot\Chapter7
+    code .
 }
 Function Invoke-Chapter8 {
     Set-Location $env:WorkspaceRoot\Chapter8
+    code .
 }
 
 # endregion ALIASES
 
 $env:WorkspaceRoot = (Get-Location).Path
 
-if (-not (Get-Command cmake -ErrorAction SilentlyContinue)) {
-    winget install cmake
-}
-
-if (-not (Get-Command ninja -ErrorAction SilentlyContinue)) {
-    winget install ninja
-}
-
 if (-not (Get-Command code -ErrorAction SilentlyContinue)) {
     winget install Microsoft.VisualStudioCode
-}
-
-if (-not (code --list-extensions | Select-String -Pattern "stm32")) {
-    code --install-extension stm32-vscode
 }
 
 if (-not (Get-Command python3 -ErrorAction SilentlyContinue)) {

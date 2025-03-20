@@ -1,0 +1,1 @@
+../shared/STM32H750XX_FLASH.ld

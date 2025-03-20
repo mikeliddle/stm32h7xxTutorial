@@ -1,4 +1,4 @@
-# Lesson 1: Main Loop
+# Chapter 1: Main Loop
 
 At this point, I'm assuming you're familiar with the basics of programming. By that I mean you shouldn't be uncomfortable when I use the words "variable", "function", "loop", "if statement", "data type", "primitive", etc. If you don't understand this, you'll quickly get confused, so please brush up on basic coding and come back.
 
