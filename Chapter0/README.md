@@ -20,4 +20,4 @@ To get started, attach the ST-Link programmer to the debug headers on the board.
 
 Now is a good time to play around setting breakpoints, using the step over/into, and pause functions of the debugger and get familiar with it. You can also start modifying the code in that example to see what happens when you get a build error, or change some of the logic in there. Restarting the launch task doesn't trigger the rebuild, you'll need to re-run the task to accomplish that.
 
-Once you've become familiar with this, proceed to [Chapter 1](../Chapter1).
+Once you've become familiar with this, proceed to [Chapter 1](/Chapter1).
