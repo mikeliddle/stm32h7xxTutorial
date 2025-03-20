@@ -1,7 +1,7 @@
-from datetime import date
 import os
 import re
 import subprocess
+from datetime import date
 
 header_file = "tools/res/header.txt"
 
@@ -11,11 +11,11 @@ author = subprocess.run(["git", "config", "--get", "user.name"], stdout=subproce
 
 # Iterate over each file
 for path, subdirs, files in os.walk(target_directory):
-    if path.startswith("./modules") or path.startswith("./build") or path.startswith("./.git"):
+    if any(segment in [".vscode", "build", ".git", "shared", "docs", "tools", "Core", "Drivers", "cmake"] for segment in path.split(os.sep)):
         continue
     for file_name in files:
-        # Check if the file has a .c or .h extension
-        if re.match(r".*\.c|.*\.h|.*\.cpp", file_name) and not file_name.endswith(".cfg") and not file_name.endswith(".cmake"):
+        # Check if the file has a .c/cpp or .h/hpp extension
+        if file_name.endswith((".c", ".h", ".cpp", ".hpp")):
             # Read the contents of the file
             with open(os.path.join(path, file_name), "r") as file:
                 file_contents = file.read()
@@ -40,7 +40,7 @@ for path, subdirs, files in os.walk(target_directory):
                 # Write the updated contents back to the file
                 with open(os.path.join(path, file_name), "w") as file:
                     file.write(new_contents)
-            
+
             else:
                 # Check if the file is modified (not committed)
                 result = subprocess.run(["git", "status", "--porcelain", os.path.join(path, file_name)], stdout=subprocess.PIPE)

@@ -7,18 +7,20 @@ markdown_files=$(git diff --cached --name-only --diff-filter=ACM | grep -E '^Cha
 # Check if there are any markdown files to format
 # if [ -n "$markdown_files" ]; then
     # echo "Formatting markdown files..."
-    
+
     # # Format each markdown file and re-add it to the staging area
     # for file in $markdown_files; do
     #     # Format the file (replace `prettier` with your formatter if needed)
     #     prettier --write "$file"
-        
+
     #     # Re-add the formatted file to the staging area
     #     git add "$file"
     # done
 # fi
 
-cpplint --recursive .
+# Get all files tracked by git that have been touched
+touched_files=$(git diff --cached --name-only --diff-filter=ACM)
+cpplint --recursive --quiet $touched_files
 
 echo "updating headers in files"
 FILES=$(python3 tools/scripts/update_headers.py)
