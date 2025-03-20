@@ -16,7 +16,6 @@ To start, you'll want to navigate to the first chapter folder `Chapter1` and ope
 
 - [Chapter 0: Getting Started with STM32H7](chapter0)
 - [Chapter 1: The Event Loop](chapter1)
-- [Chapter 2: GPIO](chapter2)
 
 ## Resources
 

@@ -19,21 +19,10 @@ int main(void) {
     // Initialize GPIO
     MX_GPIO_Init();
 
-    // Create an array of events we can check
-    uint32_t* events = {0};
-    events[0] = 0; // Initialize the event counter
-
-    // normally you'll want to check if an event has been added to the array, but
-    // to keep things simple we're just going to wait until a count is hit.
-    uint32_t triggerValue = 1000000;
     while (1) {
-        if (events[0] == triggerValue) {
-            events[0] = 0; // Reset the event
-            HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_3); // Toggle the LED pin
-        } else {
-            // Increment the event counter
-            events[0]++;
-        }
+        // The program will run indefinitely, blinking the LED on and off.
+        HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_3); // Toggle the LED pin
+        HAL_Delay(1000); // Delay for 1000 milliseconds
     }
 
     // We won't get here because of the while loop above.

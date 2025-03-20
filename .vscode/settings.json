@@ -16,6 +16,7 @@
     "cmake.cmakePath": "C:/ST/STM32CubeCLT_1.18.0/CMake/bin/cmake.exe",
     "cmake.configureOnOpen": true,
     "files.associations": {
-        "cstdint": "cpp"
+        "cstdint": "cpp",
+        "main.h": "c",
     },
 }
