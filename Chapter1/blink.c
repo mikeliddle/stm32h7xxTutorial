@@ -21,16 +21,15 @@ int main(void) {
 
     while (1) {
         // The program will run indefinitely, blinking the LED on and off.
-        HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_3); // Toggle the LED pin
-        HAL_Delay(1000); // Delay for 1000 milliseconds
+        HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_3);  // Toggle the LED pin
+        HAL_Delay(1000);  // Delay for 1000 milliseconds
     }
 
     // We won't get here because of the while loop above.
     return 0;
 }
 
-static void MX_GPIO_Init(void)
-{
+static void MX_GPIO_Init(void) {
     GPIO_InitTypeDef GPIO_InitStruct = {0};
 
     // Enable GPIO clock for the GPIO bank we are using (GPIOE)
@@ -54,10 +53,8 @@ static void MX_GPIO_Init(void)
 }
 
 // The HAL requires us to define an error handler function. Right now we aren't doing much with this.
-void Error_Handler(void)
-{
+void Error_Handler(void) {
   __disable_irq();
-  while (1)
-  {
+  while (1) {
   }
 }

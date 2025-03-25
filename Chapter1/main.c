@@ -21,15 +21,15 @@ int main(void) {
 
     // Create an array of events we can check
     uint32_t* events = {0};
-    events[0] = 0; // Initialize the event counter
+    events[0] = 0;  // Initialize the event counter
 
     // normally you'll want to check if an event has been added to the array, but
     // to keep things simple we're just going to wait until a count is hit.
     uint32_t triggerValue = 1000000;
     while (1) {
         if (events[0] == triggerValue) {
-            events[0] = 0; // Reset the event
-            HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_3); // Toggle the LED pin
+            events[0] = 0;  // Reset the event
+            HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_3);  // Toggle the LED pin
         } else {
             // Increment the event counter
             events[0]++;
@@ -40,8 +40,7 @@ int main(void) {
     return 0;
 }
 
-static void MX_GPIO_Init(void)
-{
+static void MX_GPIO_Init(void) {
     GPIO_InitTypeDef GPIO_InitStruct = {0};
 
     // Enable GPIO clock for the GPIO bank we are using (GPIOE)
@@ -65,10 +64,8 @@ static void MX_GPIO_Init(void)
 }
 
 // The HAL requires us to define an error handler function. Right now we aren't doing much with this.
-void Error_Handler(void)
-{
+void Error_Handler(void) {
   __disable_irq();
-  while (1)
-  {
+  while (1) {
   }
 }
