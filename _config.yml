@@ -1,6 +1,7 @@
 theme: liddlelab-theme
 name: "Liddle Laboratory"
 title: "Liddle Laboratory"
+baseurl: "https://liddlelaboratory.com/stm32h7xxTutorial/"
 
 exclude:
   - Chapter1
