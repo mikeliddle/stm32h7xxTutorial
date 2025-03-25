@@ -36,7 +36,7 @@
                 "CubeProg: Flash project (SWD)",
             ]
         },
-                {
+        {
             "type": "cmake",
             "label": "CMake: clean rebuild",
             "command": "cleanRebuild",
@@ -57,6 +57,17 @@
                 "cwd": "${workspaceFolder}"
             },
             "problemMatcher": []
-        }
+        },
+        {
+            "label": "Serve",
+            "type": "shell",
+            "command": "bundle install && bundle exec jekyll serve --future --config _config.yml,_debug.yml -d _site",
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "isBackground": true,
+            "problemMatcher": []
+        },
     ]
 }

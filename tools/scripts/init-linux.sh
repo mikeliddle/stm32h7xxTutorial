@@ -1,8 +1,12 @@
 #!/bin/bash
 
-# Function to invoke Arduino build
+# Function to invoke STM32 build
 invoke_build() {
-    
+
+}
+
+invoke_newChapter() {
+    ./tools/scripts/newChapter.sh
 }
 
 # Check if python3 is installed
@@ -27,3 +31,5 @@ export WORKSPACE_ROOT=$(pwd)
 
 # Create alias for build
 alias build=invoke_build
+alias nc=invoke_newChapter
+alias newChapter=invoke_newChapter

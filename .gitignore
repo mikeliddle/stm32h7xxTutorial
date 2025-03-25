@@ -51,3 +51,7 @@ out
 build.ninja
 .ninja_deps
 .ninja_log
+
+# Jekyll/GH pages
+_site
+.jekyll-cache

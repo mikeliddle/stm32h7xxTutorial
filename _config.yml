@@ -1,0 +1,15 @@
+theme: liddlelab-theme
+name: "Liddle Laboratory"
+title: "Liddle Laboratory"
+
+exclude:
+  - Chapter1
+  - Chapter0
+  - Template
+  - cpplint.cfg
+  - init.ps1
+  - init.sh
+  - LICENSE
+  - shared
+  - tools
+  - README.md

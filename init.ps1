@@ -21,6 +21,10 @@ Function Invoke-NextLesson {
     }
 }
 
+Function Invoke-NewChapter {
+    bash $env:WorkspaceRoot/tools/scripts/newChapter.sh
+}
+
 Function Invoke-Chapter1 {
     Set-Location $env:WorkspaceRoot\Chapter1
     code .
@@ -75,6 +79,9 @@ Copy-Item tools/hooks/pre-commit .git/hooks/pre-commit -Force
 Set-Alias -Name build -Value Invoke-Build
 Set-Alias -Name next -Value Invoke-NextLesson
 Set-Alias -Name nl -Value Invoke-NextLesson
+
+Set-Alias -Name nc -Value Invoke-NewChapter
+Set-Alias -Name newChapter -Value Invoke-NewChapter
 
 Set-Alias -Name chapter1 -Value Invoke-Chapter1
 Set-Alias -Name chapter2 -Value Invoke-Chapter2

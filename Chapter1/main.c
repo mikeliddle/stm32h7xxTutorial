@@ -13,7 +13,7 @@
 static void MX_GPIO_Init(void);
 
 int main(void) {
-    // Initialize the Hadware Abstraction Layer (HAL) so we can use it.
+    // Initialize the Hardware Abstraction Layer (HAL) so we can use it.
     // This is provided as part of our STM32 libraries we are including in main.h
     HAL_Init();
     // Initialize GPIO
