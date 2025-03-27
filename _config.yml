@@ -14,3 +14,4 @@ exclude:
   - shared
   - tools
   - README.md
+  - Chapter2

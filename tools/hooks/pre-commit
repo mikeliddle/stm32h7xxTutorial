@@ -20,7 +20,9 @@ markdown_files=$(git diff --cached --name-only --diff-filter=ACM | grep -E '^Cha
 
 # Get all files tracked by git that have been touched
 touched_files=$(git diff --cached --name-only --diff-filter=ACM)
-cpplint --recursive --quiet $touched_files
+# Remove files with 'Drivers', 'Core', or 'build' in their path
+touched_files=$(echo "$touched_files" | grep -vE '(/|^)(Drivers|Core|build)(/|$)')
+cpplint --quiet $touched_files
 
 echo "updating headers in files"
 FILES=$(python3 tools/scripts/update_headers.py)

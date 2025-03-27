@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # if mac, run scripts;/init-mac.sh
 if [ "$(uname)" == "Darwin" ]; then

@@ -35,7 +35,22 @@ if ! grep -q "exclude:" "$CONFIG_FILE"; then
     echo -e "\nexclude:" >> "$CONFIG_FILE"
 fi
 if ! grep -q "  - $NEW_CHAPTER" "$CONFIG_FILE"; then
-    echo "  - $NEW_CHAPTER" >> "$CONFIG_FILE"
+    echo "  - $NEW_CHAPTER\n" >> "$CONFIG_FILE"
 fi
+
+# Exclude common files from cpplint.cfg
+CPPLINT_CFG="cpplint.cfg"
+if [[ ! -f "$CPPLINT_CFG" ]]; then
+    touch "$CPPLINT_CFG"
+fi
+
+EXCLUDE_FILES=("Core" "Driver" "build")
+for FILE in "${EXCLUDE_FILES[@]}"; do
+    EXCLUDE_ENTRY="exclude_files=${NEW_CHAPTER}/${FILE}"
+    if ! grep -q "$EXCLUDE_ENTRY" "$CPPLINT_CFG"; then
+        echo "$EXCLUDE_ENTRY" >> "$CPPLINT_CFG"
+    fi
+done
+
 
 echo "New chapter folder '$NEW_CHAPTER' created successfully."

@@ -2,7 +2,7 @@
 
 # Function to invoke STM32 build
 invoke_build() {
-
+    build
 }
 
 invoke_newChapter() {
@@ -12,17 +12,21 @@ invoke_newChapter() {
 # Check if python3 is installed
 if ! command -v python3 &> /dev/null; then
     sudo apt-get update
-    sudo apt-get install -y python3.12
+    sudo apt-get install -y python3
+fi
+
+if ! command -v pip &> /dev/null; then
+    sudo apt-get install -y python3-pip
 fi
 
 # Check if cpplint is installed
 if ! command -v cpplint &> /dev/null; then
-    python3 -m pip install cpplint
+    sudo apt-get install cpplint
 fi
 
 # Check if pre-commit hook is set up
-if [ ! -f .git/hooks/pre-commit ] || ! diff -q scripts/pre-commit .git/hooks/pre-commit &> /dev/null; then
-    cp scripts/pre-commit .git/hooks/pre-commit
+if [ ! -f .git/hooks/pre-commit ] || ! diff -q tools/hooks/pre-commit .git/hooks/pre-commit &> /dev/null; then
+    cp tools/hooks/pre-commit .git/hooks/pre-commit
     chmod +x .git/hooks/pre-commit
 fi
 
